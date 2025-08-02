@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, veritatis. Quas in laborum saepe enim sequi blanditiis sit architecto omnis ut, fugit laudantium? Obcaecati sint aperiam assumenda fugit omnis hic?
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/Shivansh2004-Mishra'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requestUrl)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data.followers);
+            
+        }
+    }
+    xhr.send()
+</script>
+</html>
